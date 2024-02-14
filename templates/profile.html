@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content%} 
+<div class="row"></div>
+<div class="col-sm-3 col-6">
+    <img src="{{ profile.image }}" alt="{{ profile.name }}" class="img-fluid img-thumbnail">                               
+    <h3 class="h5">{{ profile.name }}</h3>
+    <p>Status: {{ profile.status }}</p>
+    <p>Espécie: {{ profile.species }}</p>
+    <hr>
+</div>
+</div>
+{% endblock %}
