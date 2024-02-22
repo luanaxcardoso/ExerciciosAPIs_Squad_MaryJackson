@@ -49,5 +49,17 @@ def get_list_elements():
     except Exception as e:
         return {"error": str(e)}
 
+
+@app.route('/locations')
+def get_location_list():
+    url = "https://rickandmortyapi.com/api/location"
+    context = ssl._create_unverified_context()
+    response = urllib.request.urlopen(url, context=context)
+    data = response.read()
+    dict = json.loads(data)
+    
+    return render_template("locations.html", locations=dict['results'])
+
+
 if __name__ == '__main__':
     app.run(debug=True)
