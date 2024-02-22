@@ -60,24 +60,6 @@ def get_location_list():
     
     return render_template("locations.html", locations=dict['results'])
 
-    # try:
-    #     response = urllib.request.urlopen(url, context=context)
-    #     location = response.read()
-    #     dict = json.loads(location)
-
-    #     locations_list = []
-
-    #     for loc in dict['results']:
-    #         character_data = {
-    #             "name": loc['name'],
-    #             "type": loc['type'],
-    #             "dimension": loc['dimension'],
-    #         }
-    #         locations_list.append(character_data)
-        
-    #     return {"locations": locations_list}
-    # except Exception as e:
-    #     return {"error": str(e)}
 
 if __name__ == '__main__':
     app.run(debug=True)
