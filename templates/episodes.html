@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="table-responsive"> 
+    <table class="table table-striped"> 
+        <thead>
+            <tr>
+                <th scope="col" style="color: #4a911ba3;">Nome</th>
+                <th scope="col" style="color: #4a911ba3;">Data de lançamento</th>
+                <th scope="col" style="color: #4a911ba3;">Código</th>
+            </tr>
+            <tbody class="table-group-divider"> 
+                {% for episode in episodes %} 
+                <tr>
+                    <td><a href="/episodes/{{episode.id}}" >{{ episode.name }}</a></td> 
+                    <td>{{ episode.air_date }}</td>
+                    <td>{{ episode.episode }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+            </thead>
+        </table>
+    </div>
+    
+    {% endblock %}
