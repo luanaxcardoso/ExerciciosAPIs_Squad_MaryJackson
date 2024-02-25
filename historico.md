@@ -16,4 +16,8 @@ No terminal para rodar o servidor, digite o seguinte comando:
 
 flask --app app run
 
+ou 
+
+python app.py
+
 Running on http://127.0.0.1:5000
