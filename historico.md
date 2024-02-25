@@ -1,3 +1,8 @@
+*** A documentação da API Rick & Morty pode ser encontrada em: ***
+
+https://rickandmortyapi.com/documentation/#rest
+
+---------------------------------------------------------------------------
 python3 -m venv .venv
 
 .venv\Scripts\activate (no adm powershell)

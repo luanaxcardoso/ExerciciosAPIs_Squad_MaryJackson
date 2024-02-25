@@ -3,6 +3,8 @@ import urllib.request
 import json 
 import ssl 
 
+ssl._create_default_https_context = ssl._create_unverified_context #Para evitar errores de certificado SSL
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -31,7 +33,7 @@ def get_list_elements():
     context = ssl._create_unverified_context()
 
     try:
-        response = urllib.request.urlopen(url, context=context)
+        response = urllib.request.urlopen(url, context=None)
         characters = response.read()
         dict = json.loads(characters)
 
@@ -59,6 +61,23 @@ def get_location_list():
     dict = json.loads(data)
     
     return render_template("locations.html", locations=dict['results'])
+
+@app.route('/id_location/<id>')
+def get_idlocation(id):
+    url = "https://rickandmortyapi.com/api/location/"+id
+    context = ssl._create_unverified_context()
+    response = urllib.request.urlopen(url, context=context)
+    data = response.read()
+    location_dict = json.loads(data)
+
+    
+    characters_data = []
+    for resident_url in location_dict['residents']:
+        with urllib.request.urlopen(resident_url, context=context) as response:
+            character_data = json.loads(response.read())
+            characters_data.append(character_data)
+
+    return render_template("id_location.html", id_location=location_dict, characters=characters_data)
 
 
 @app.route('/episodes')

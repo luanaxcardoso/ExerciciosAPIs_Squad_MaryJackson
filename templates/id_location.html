@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-6">
+    <h3 style="font-size: 24px; color: #5a017da3;">Detalhes da Localização</h3>
+    <ul class="list-unstyled" style="font-size: 18px; color: #1443dda3; font-weight: bold;">
+      <li><strong>Nome:</strong> {{ id_location.name }}</li>
+      <li><strong>Tipo:</strong> {{ id_location.type }}</li>
+      <li><strong>Dimensão:</strong> {{ id_location.dimension }}</li>
+      <li><strong>Personagens:</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  {% for character in characters %}
+  <div class="col-md-3 mb-3">  
+    <div class="card">
+      <img src="{{ character.image }}" class="card-img-top" alt="{{ character.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ character.name }}</h5>
+        <a href="/profile/{{ character.id }}" class="btn btn-primary btn-sm">Ver perfil</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
