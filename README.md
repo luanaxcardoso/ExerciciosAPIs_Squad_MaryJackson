@@ -1,4 +1,5 @@
 ## Bootcamp Python & Django - WoMakers Code
+
 ## API - Rick e Morty com Flask
 
 ### Squad Mary Jackson:
