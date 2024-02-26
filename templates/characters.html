@@ -4,15 +4,15 @@
 <div class="row">
     {% for character in characters %}
     <div class="col-sm-3 col-6 mb-4">
-        <div class="card">
+        <div class="card shadow">
             <img src="{{ character.image }}" class="card-img-top" alt="{{ character.name }}">
             <div class="card-body">
                 <h5 class="card-title">{{ character.name }}</h5>
-                <p class="card-text">Status: {{ character.status }}</p>
-                <p class="card-text">Espécie: {{ character.species }}</p>
-                <p class="card-text">Gênero: {{ character.gender }}</p>
-                <p class="card-text">Origem: {{ character.origin.name }}</p>
-                <p class="card-text">Localização: {{ character.location.name }}</p>
+                <p class="card-text text-truncate">Status: {{ character.status }}</p>
+                <p class="card-text text-truncate">Espécie: {{ character.species }}</p>
+                <p class="card-text text-truncate">Gênero: {{ character.gender }}</p>
+                <p class="card-text text-truncate">Origem: {{ character.origin.name }}</p>
+                <p class="card-text text-truncate">Localização: {{ character.location.name }}</p>
                 <a href="/profile/{{ character.id }}" class="btn btn-primary btn-sm">Ver perfil</a>
             </div>
         </div>

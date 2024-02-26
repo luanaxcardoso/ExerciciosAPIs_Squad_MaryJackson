@@ -68,22 +68,21 @@ def get_location_list():
     
     return render_template("locations.html", locations=dict['results'])
 
-@app.route('/id_location/<id>')
-def get_id_location(id):
+@app.route('/location/<id>')
+def get_location(id):
     url = "https://rickandmortyapi.com/api/location/" + id
     context = ssl._create_unverified_context()
     response = urllib.request.urlopen(url, context=context)
     data = response.read().decode('utf-8')
     location_dict = json.loads(data)
 
-    
     characters_data = []
     for resident_url in location_dict['residents']:
         with urllib.request.urlopen(resident_url, context=context) as response:
             character_data = json.loads(response.read().decode('utf-8'))
             characters_data.append(character_data)
 
-    return render_template("id_location.html", id_location=location_dict, characters=characters_data)
+    return render_template("location.html", location=location_dict, characters=characters_data)
 
 @app.route('/episodes')
 def get_episode_list():
