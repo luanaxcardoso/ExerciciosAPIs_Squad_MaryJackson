@@ -1,16 +1,16 @@
 {% extends 'layout.html' %}
 
-{% block content%} 
-<div class="row"></div>
-<div class="col-sm-3 col-6">
-    <img src="{{ profile.image }}" alt="{{ profile.name }}" class="img-fluid img-thumbnail">                               
-    <h3 class="h5">{{ profile.name }}</h3>
-    <p>Status: {{ profile.status }}</p>
-    <p>Espécie: {{ profile.species }}</p>
-    <p>Gênero: {{ profile.gender }}</p> 
-    <p>Origem: {{ profile.origin.name }}</p>
-    <p>Localização: {{ profile.location.name }}</p>
-    <hr>
-</div>
+{% block content %} 
+<div class="row">
+    <div class="col-sm-6">
+        <img src="{{ profile.image }}" alt="{{ profile.name }}" class="img-fluid img-thumbnail">                               
+        <h3 class="h5">{{ profile.name }}</h3>
+        <p>Status: {{ profile.status }}</p>
+        <p>Espécie: {{ profile.species }}</p>
+        <p>Gênero: {{ profile.gender }}</p> 
+        <p>Origem: <a href="{{ profile.origin.url }}">{{ profile.origin.name }}</a></p>
+        <p>Localização: <a href="{{ profile.location.url }}">{{ profile.location.name }}</a></p>
+        <hr>
+    </div>
 </div>
 {% endblock %}

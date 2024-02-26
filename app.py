@@ -3,7 +3,7 @@ import urllib.request
 import json
 import ssl
 
-ssl._create_default_https_context = ssl._create_unverified_context  # Para evitar errores de certificado SSL
+ssl._create_default_https_context = ssl._create_unverified_context()  # Para evitar erros de certificado SSL
 
 app = Flask(__name__)
 
@@ -13,9 +13,9 @@ def get_list_elements_page():
     context = ssl._create_unverified_context()
     response = urllib.request.urlopen(url, context=context)
     data = response.read()
-    dict = json.loads(data)
+    characters_dict = json.loads(data)
     
-    return render_template("characters.html", characters=dict['results'])
+    return render_template("characters.html", characters=characters_dict['results'])
 
 @app.route('/profile/<id>')
 def get_profile(id):
@@ -23,40 +23,9 @@ def get_profile(id):
     context = ssl._create_unverified_context()
     response = urllib.request.urlopen(url, context=context)
     data = response.read()
-    dict = json.loads(data)
+    character_dict = json.loads(data)
     
-    return render_template("profile.html", profile=dict)
-
-@app.route('/lista')
-def get_list_elements():
-    url_characters = "https://rickandmortyapi.com/api/character/"
-    url_locations = "https://rickandmortyapi.com/api/location"
-    context = ssl._create_unverified_context()
-
-    try:
-        with urllib.request.urlopen(url_characters, context=context) as response:
-            characters_data = response.read()
-            characters_dict = json.loads(characters_data)
-
-        with urllib.request.urlopen(url_locations, context=context) as response:
-            locations_data = response.read().decode('utf-8')
-            locations_dict = json.loads(locations_data)
-
-        characters_list = []
-
-        for character in characters_dict['results']:
-            character_data = {
-                "name": character['name'],
-                "status": character['status'],
-                "species": character['species'],
-                "gender": character['gender']['name'],
-                "origin": character['origin']['name']
-            }
-            characters_list.append(character_data)
-        
-        return render_template("lista.html", characters=characters_list, locations=locations_dict)
-    except Exception as e:
-        return {"error": str(e)}
+    return render_template("profile.html", profile=character_dict)
 
 @app.route('/locations')
 def get_location_list():
@@ -64,9 +33,9 @@ def get_location_list():
     context = ssl._create_unverified_context()
     response = urllib.request.urlopen(url, context=context)
     data = response.read().decode('utf-8')
-    dict = json.loads(data)
+    locations_dict = json.loads(data)
     
-    return render_template("locations.html", locations=dict['results'])
+    return render_template("locations.html", locations=locations_dict['results'])
 
 @app.route('/location/<id>')
 def get_location(id):
@@ -90,14 +59,29 @@ def get_episode_list():
     context = ssl._create_unverified_context()
     response = urllib.request.urlopen(url, context=context)
     data = response.read().decode('utf-8')
-    dict = json.loads(data)
+    episodes_dict = json.loads(data)
     
-    return render_template("episodes.html", episodes=dict['results'])
+    return render_template("episodes.html", episodes=episodes_dict['results'])
+
+@app.route('/episode/<id>')
+def get_episode(id):
+    url = "https://rickandmortyapi.com/api/episode/" + id
+    context = ssl._create_unverified_context()
+    response = urllib.request.urlopen(url, context=context)
+    data = response.read()
+    episode_dict = json.loads(data)
+
+    characters_data = []
+    for character_url in episode_dict['characters']:
+        with urllib.request.urlopen(character_url, context=context) as response:
+            character_data = json.loads(response.read())
+            characters_data.append(character_data)
+
+    return render_template("episode.html", episode=episode_dict, characters=characters_data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
 
 
 
