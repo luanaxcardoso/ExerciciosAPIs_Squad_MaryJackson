@@ -10,6 +10,9 @@
                 <h5 class="card-title">{{ character.name }}</h5>
                 <p class="card-text">Status: {{ character.status }}</p>
                 <p class="card-text">Espécie: {{ character.species }}</p>
+                <p class="card-text">Gênero: {{ character.gender }}</p>
+                <p class="card-text">Origem: {{ character.origin.name }}</p>
+                <p class="card-text">Localização: {{ character.location.name }}</p>
                 <a href="/profile/{{ character.id }}" class="btn btn-primary btn-sm">Ver perfil</a>
             </div>
         </div>
