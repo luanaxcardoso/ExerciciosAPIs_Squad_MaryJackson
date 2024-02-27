@@ -32,7 +32,7 @@ def get_location_list():
     url = "https://rickandmortyapi.com/api/location"
     context = ssl._create_unverified_context()
     response = urllib.request.urlopen(url, context=context)
-    data = response.read()
+    data = response.read().decode('utf-8')
     locations_dict = json.loads(data)
     
     return render_template("locations.html", locations=locations_dict['results'])
@@ -42,13 +42,13 @@ def get_location(id):
     url = "https://rickandmortyapi.com/api/location/" + id
     context = ssl._create_unverified_context()
     response = urllib.request.urlopen(url, context=context)
-    data = response.read()
+    data = response.read().decode('utf-8')
     location_dict = json.loads(data)
 
     characters_data = []
     for resident_url in location_dict['residents']:
         with urllib.request.urlopen(resident_url, context=context) as response:
-            character_data = json.loads(response.read())
+            character_data = json.loads(response.read().decode('utf-8'))
             characters_data.append(character_data)
 
     return render_template("location.html", location=location_dict, characters=characters_data)
@@ -58,7 +58,7 @@ def get_episode_list():
     url = "https://rickandmortyapi.com/api/episode"
     context = ssl._create_unverified_context()
     response = urllib.request.urlopen(url, context=context)
-    data = response.read()
+    data = response.read().decode('utf-8')
     episodes_dict = json.loads(data)
     
     return render_template("episodes.html", episodes=episodes_dict['results'])
