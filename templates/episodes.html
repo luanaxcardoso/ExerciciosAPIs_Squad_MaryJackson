@@ -2,33 +2,25 @@
 
 {% block content %}
 
-<div class="container">
-    <h2>Detalhes do Episódio</h2>
-    <div class="table-responsive"> 
-        <table class="table table-striped"> 
-            <thead>
-                <tr>
-                    <th scope="col" style="color: #4a911ba3;">Nome</th>
-                    <th scope="col" style="color: #4a911ba3;">Data de lançamento</th>
-                    <th scope="col" style="color: #4a911ba3;">Código</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider"> 
-                <tr>
-                    <td>{{ episode.name }}</td>
-                    <td>{{ episode.air_date }}</td>
-                    <td>{{ episode.episode }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h2>Personagens</h2>
-    <div class="list-group">
-        {% for character in characters %}
-            <a href="/profile/{{ character.id }}" class="list-group-item list-group-item-action">{{ character.name }}</a>
-        {% endfor %}
-    </div>
+<div class="table-responsive"> 
+    <table class="table table-striped"> 
+        <thead> 
+            <tr> 
+                <th scope="col" style="color: #4a911ba3;">Nome</th>
+                <th scope="col" style="color: #4a911ba3;">Data de lançamento</th>
+                <th scope="col" style="color: #4a911ba3;">Código</th>
+            </tr>
+        <tbody class="table-group-divider"> 
+            {% for episode in episodes %} 
+            <tr>
+                <td><a href="/episode/{{episode.id}}" >{{ episode.name }}</a></td> 
+                <td>{{ episode.air_date }}</td>
+                <td>{{ episode.episode }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </thead>
+    </table>
 </div>
 
 {% endblock %}

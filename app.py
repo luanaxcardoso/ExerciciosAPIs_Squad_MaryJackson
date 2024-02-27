@@ -68,7 +68,7 @@ def get_episode(id):
     url = "https://rickandmortyapi.com/api/episode/" + id
     context = ssl._create_unverified_context()
     response = urllib.request.urlopen(url, context=context)
-    data = response.read()
+    data = response.read().decode('utf-8')
     episode_dict = json.loads(data)
 
     characters_data = []
