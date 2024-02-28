@@ -1,15 +1,21 @@
 {% extends 'layout.html' %}
 
-{% block content %} 
+{% block content %}
 <div class="row">
     <div class="col-sm-6">
-        <img src="{{ profile.image }}" alt="{{ profile.name }}" class="img-fluid img-thumbnail">                               
+        <img src="{{ profile.image }}" alt="{{ profile.name }}" class="img-fluid img-thumbnail">
         <h3 class="h5 mt-2" style="font-family: 'poppins', sans-serif;">{{ profile.name }}</h3>
         <p style="font-family: 'poppins', sans-serif; ">Status: {{ profile.status }}</p>
         <p style="font-family: 'poppins', sans-serif; ">Espécie: {{ profile.species }}</p>
-        <p style="font-family: 'poppins', sans-serif; ">Gênero: {{ profile.gender }}</p> 
+        <p style="font-family: 'poppins', sans-serif; ">Gênero: {{ profile.gender }}</p>
         <p style="font-family: 'poppins', sans-serif; ">Origem: <a href="{{ profile.origin.url }}">{{ profile.origin.name }}</a></p>
         <p style="font-family: 'poppins', sans-serif; ">Localização: <a href="{{ profile.location.url }}">{{ profile.location.name }}</a></p>
+        <p style="font-family: 'poppins', sans-serif; ">Episódios:</p>
+        <ul>
+            {% for episode in profile.episode %}
+                <li><a href="/episode/{{ episode.split('/')[-1] }}">{{ episode }}</a></li>
+            {% endfor %}
+        </ul>
         <hr>
     </div>
 </div>
