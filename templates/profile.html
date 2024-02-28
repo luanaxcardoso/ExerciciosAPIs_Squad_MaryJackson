@@ -8,8 +8,8 @@
         <p style="font-family: 'poppins', sans-serif; ">Status: {{ profile.status }}</p>
         <p style="font-family: 'poppins', sans-serif; ">Espécie: {{ profile.species }}</p>
         <p style="font-family: 'poppins', sans-serif; ">Gênero: {{ profile.gender }}</p>
-        <p style="font-family: 'poppins', sans-serif; ">Origem: <a href="{{ profile.origin.url }}">{{ profile.origin.name }}</a></p>
-        <p style="font-family: 'poppins', sans-serif; ">Localização: <a href="{{ profile.location.url }}">{{ profile.location.name }}</a></p>
+        <p style="font-family: 'poppins', sans-serif; ">Origem: <a href="/location/{{ profile.origin.url.split('/')[-1] }}">{{ profile.origin.name }}</a></p>
+        <p style="font-family: 'poppins', sans-serif; ">Localização: <a href="/location/{{ profile.location.url.split('/')[-1] }}">{{ profile.location.name }}</a></p>
         <p style="font-family: 'poppins', sans-serif; ">Episódios:</p>
         <ul>
             {% for episode in profile.episode %}
