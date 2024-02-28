@@ -6,16 +6,16 @@
     <table class="table table-striped"> 
         <thead> 
             <tr> 
-                <th scope="col" style="color: #4a911ba3;">Nome</th>
-                <th scope="col" style="color: #4a911ba3;">Data de lançamento</th>
-                <th scope="col" style="color: #4a911ba3;">Código</th>
+                <th scope="col" style="color: #4a911ba3; font-family: 'poppins', sans-serif;">Nome</th>
+                <th scope="col" style="color: #4a911ba3; font-family: 'poppins', sans-serif;">Data de lançamento</th>
+                <th scope="col" style="color: #4a911ba3; font-family: 'poppins', sans-serif;">Código</th>
             </tr>
         <tbody class="table-group-divider"> 
             {% for episode in episodes %} 
             <tr>
-                <td><a href="/episode/{{episode.id}}" >{{ episode.name }}</a></td> 
-                <td>{{ episode.air_date }}</td>
-                <td>{{ episode.episode }}</td>
+                <td style="font-family: 'poppins', sans-serif;"><a style="text-decoration: none; color:rgb(48, 47, 47)" href="/episode/{{episode.id}}" >{{ episode.name }}</a></td> 
+                <td style="font-family: 'poppins', sans-serif;">{{ episode.air_date }}</td>
+                <td style="font-family: 'poppins', sans-serif;">{{ episode.episode }}</td>
             </tr>
             {% endfor %}
         </tbody>
