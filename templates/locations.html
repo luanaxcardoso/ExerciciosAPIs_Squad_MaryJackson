@@ -6,17 +6,17 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col" style="color: #5a017da3;">Nome</th>
-        <th scope="col" style="color: #5a017da3;">Tipo</th>
-        <th scope="col" style="color: #5a017da3;">Dimensão</th>
-        <th scope="col" style="color: #5a017da3;">Abrir </th>
+        <th scope="col" style="color: #5a017da3; font-family: 'poppins', sans-serif;">Nome</th>
+        <th scope="col" style="color: #5a017da3; font-family: 'poppins', sans-serif;">Tipo</th>
+        <th scope="col" style="color: #5a017da3; font-family: 'poppins', sans-serif;">Dimensão</th>
+        <th scope="col" style="color: #5a017da3; font-family: 'poppins', sans-serif;">Abrir </th>
       </tr>
     <tbody>
       {% for location in locations %}
       <tr>
-        <td>{{ location.name }}</td>
-        <td>{{ location.type }}</td>
-        <td>{{ location.dimension }}</td>
+        <td style="font-family: 'poppins', sans-serif; font-size:1rem">{{ location.name }}</td>
+        <td style="font-family: 'poppins', sans-serif; font-size:1rem">{{ location.type }}</td>
+        <td style="font-family: 'poppins', sans-serif; font-size:1rem">{{ location.dimension }}</td>
         <td>
           <a href="/location/{{ location.id }}">
             <svg 

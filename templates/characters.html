@@ -4,16 +4,16 @@
 <div class="row">
     {% for character in characters %}
     <div class="col-sm-3 col-6 mb-4">
-        <div class="card shadow">
-            <img src="{{ character.image }}" class="card-img-top" alt="{{ character.name }}">
-            <div class="card-body">
-                <h5 class="card-title">{{ character.name }}</h5>
-                <p class="card-text text-truncate">Status: {{ character.status }}</p>
+        <div class="card shadow" style="background-color: #D1EECC;">
+            <img src="{{ character.image }}" class="card-img-top img-fluid img-thumbnail border border-success" alt="{{ character.name }}">
+            <div class="card-body text-center">
+                <h3 class="card-title h5 mb-4" style="font-family: 'poppins', sans-serif;">{{ character.name }}</h3>
+                <!--<p class="card-text text-truncate">Status: {{ character.status }}</p>
                 <p class="card-text text-truncate">Espécie: {{ character.species }}</p>
                 <p class="card-text text-truncate">Gênero: {{ character.gender }}</p>
                 <p class="card-text text-truncate">Origem: {{ character.origin.name }}</p>
-                <p class="card-text text-truncate">Localização: {{ character.location.name }}</p>
-                <a href="/profile/{{ character.id }}" class="btn btn-primary btn-sm">Ver perfil</a>
+                <p class="card-text text-truncate">Localização: {{ character.location.name }}</p> -->
+                <a href="/profile/{{ character.id }}" class="btn btn-outline-success rounded-lg btn-sm text-center" style="font-family: 'poppins', sans-serif;">Ver perfil</a>
             </div>
         </div>
     </div>
