@@ -17,6 +17,30 @@ def get_list_elements_page():
     
     return render_template("characters.html", characters=characters_dict['results'])
 
+@app.route('/lista')
+def get_list_elements():
+    url = "https://rickandmortyapi.com/api/character/"
+    context = ssl._create_unverified_context()
+
+    try:
+        response = urllib.request.urlopen(url, context=context)
+        characters = response.read()
+        dict = json.loads(characters)
+
+        characters_list = []
+
+        for character in dict['results']:
+            character_data = {
+                "name": character['name'],
+                "status": character['status'],
+                "species": character['species'],
+            }
+            characters_list.append(character_data)
+        
+        return {"characters": characters_list}
+    except Exception as e:
+        return {"error": str(e)}
+
 @app.route('/profile/<id>')
 def get_profile(id):
     url = "https://rickandmortyapi.com/api/character/" + id
