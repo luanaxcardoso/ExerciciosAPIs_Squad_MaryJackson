@@ -13,7 +13,7 @@
         <tbody class="table-group-divider"> 
             {% for episode in episodes %} 
             <tr>
-                <td style="font-family: 'poppins', sans-serif;"><a href="/episode/{{ episode.id }}" >{{ episode.name }}</a></td> 
+                <td style="font-family: 'poppins', sans-serif;"><a style="text-decoration: none; color: #21252F" href="/episode/{{ episode.id }}" >{{ episode.name }}</a></td> 
                 <td style="font-family: 'poppins', sans-serif;">{{ episode.air_date }}</td>
                 <td style="font-family: 'poppins', sans-serif;">{{ episode.episode }}</td>
             </tr>
