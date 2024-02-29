@@ -100,7 +100,7 @@ Esperamos que este projeto seja útil e educativo para quem estiver interessado 
 
 Divirta-se explorando o universo do Rick and Morty! 🚀👽🔬
 
-Link do video:
+Link da apresentação da API em video:
 https://youtu.be/BGEemjsr79A
 
 
