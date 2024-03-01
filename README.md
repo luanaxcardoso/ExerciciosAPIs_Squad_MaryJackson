@@ -5,9 +5,9 @@ Este é um projeto desenvolvido durante o Bootcamp Python & Django da WoMakers C
 ## Membros do Squad Mary Jackson:
 
 - Ana Carolina Torchia De Souza
-- Camila Aragão (Não tivemos retorno)
-- Daniela do Nascimento Dalla Vecchia (Não tivemos retorno)
-- Juliana Silva Gonçalves (Não tivemos retorno)
+- Camila Aragão 
+- Daniela do Nascimento Dalla Vecchia 
+- Juliana Silva Gonçalves 
 - Lorrayne Santana
 - Luana Aparecida Cardoso
 - Lucimara Costa Bustamante
