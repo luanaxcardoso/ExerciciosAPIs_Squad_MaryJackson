@@ -5,9 +5,9 @@ Este é um projeto desenvolvido durante o Bootcamp Python & Django da WoMakers C
 ## Membros do Squad Mary Jackson:
 
 - Ana Carolina Torchia De Souza
-- Camila Aragão
-- Daniela do Nascimento Dalla Vecchia
-- Juliana Silva Gonçalves
+- Camila Aragão (Não tivemos retorno)
+- Daniela do Nascimento Dalla Vecchia (Não tivemos retorno)
+- Juliana Silva Gonçalves (Não tivemos retorno)
 - Lorrayne Santana
 - Luana Aparecida Cardoso
 - Lucimara Costa Bustamante
@@ -24,8 +24,6 @@ O projeto consiste em um aplicativo web que utiliza o framework Flask para consu
 
 1. Clone este repositório para o seu ambiente de desenvolvimento local:
 
-git clone https://github.com/Stesilva16/ExerciciosAPIs_Squad_MaryJackson.git
-
 2. Navegue até o diretório do projeto:
 
 cd ExerciciosAPIs_Squad_MaryJackson
@@ -34,28 +32,23 @@ cd ExerciciosAPIs_Squad_MaryJackson
 
 python -m venv .venv
 
-
 4. Ative o ambiente virtual:
 
 No Windows:
 
 .venv\Scripts\activate
 
-
 No Linux/macOS:
 
 source .venv/bin/activate
-
 
 5. Instale as dependências do projeto:
 
 pip install -r requirements.txt
 
-
 6. Execute o aplicativo:
 
 python app.py
-
 
 7. Abra um navegador da web e vá para o seguinte endereço:
 
@@ -101,12 +94,7 @@ Esperamos que este projeto seja útil e educativo para quem estiver interessado 
 Divirta-se explorando o universo do Rick and Morty! 🚀👽🔬
 
 Link da apresentação da API em video:
-https://youtu.be/BGEemjsr79A
+https://youtu.be/ZM-w6omlHkg
 
-
-
-
-
-
-
-
+## Organização:
+No nosso repositório, utilizamos o campo Issue para organizar os exercícios e tarefas relacionadas ao desenvolvimento do projeto. Isso incluiu a estilização geral, aprimoramentos específicos na página de perfil do usuário para torná-la mais informativa e interativa, a implementação de rotas e templates para a listagem de episódios, tanto em uma visualização geral quanto por id, e também para a listagem de localização geral e sua exibição por id. A colaboração ativa permitiu que compartilhássemos conhecimentos e superássemos desafios e aproveitássemos as habilidades individuais de cada membro para alcançar nossas metas.
